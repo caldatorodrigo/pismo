@@ -12,6 +12,9 @@ gradle clean build
 docker-compose up 
 docker-compose down
 
+## SWAGGER
+http://localhost:8080/swagger-ui.html
+
 ## CURLS 
 
 ### POST /user/save 
