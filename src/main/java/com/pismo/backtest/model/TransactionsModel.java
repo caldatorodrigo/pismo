@@ -1,12 +1,13 @@
 package com.pismo.backtest.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Digits;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -14,50 +15,66 @@ import org.hibernate.annotations.CreationTimestamp;
 public class TransactionsModel {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Transaction_ID;
-    private Long Account_ID;
-
+	private Long Account_ID;
     private Long OperationType_ID;
-    
-    @Digits(integer = 10, fraction = 2)
-    private Float Amount;
+    private BigDecimal Amount;
     
     @Column(name = "`EventDate`")
 	@CreationTimestamp
 	private Date EventDate;
 
-
-    public Long getTransaction_ID() {
-        return Transaction_ID;
+    /** Hibernate */
+    public TransactionsModel() {
     }
 
-    public void setTransaction_ID(Long transaction_ID) {
-        Transaction_ID = transaction_ID;
-    }
-
-    public Long getAccount_ID() {
-        return Account_ID;
-    }
-
-    public void setAccount_ID(Long account_ID) {
+    /** DTO only */
+    public TransactionsModel(Long account_ID, Long operationType_ID, BigDecimal amount) {
         Account_ID = account_ID;
-    }
-
-    public Long getOperationType_ID() {
-        return OperationType_ID;
-    }
-
-    public void setOperationType_ID(Long operationType_ID) {
         OperationType_ID = operationType_ID;
-    }
-
-    public Float getAmount() {
-        return Amount;
-    }
-
-    public void setAmount(Float amount) {
         Amount = amount;
     }
+
+
+    public Long getTransaction_ID() {
+		return Transaction_ID;
+	}
+
+	public void setTransaction_ID(Long transaction_ID) {
+		Transaction_ID = transaction_ID;
+	}
+
+	public Long getAccount_ID() {
+		return Account_ID;
+	}
+
+	public void setAccount_ID(Long account_ID) {
+		Account_ID = account_ID;
+	}
+
+	public Long getOperationType_ID() {
+		return OperationType_ID;
+	}
+
+	public void setOperationType_ID(Long operationType_ID) {
+		OperationType_ID = operationType_ID;
+	}
+
+	public BigDecimal getAmount() {
+		return Amount;
+	}
+
+	public void setAmount(BigDecimal amount) {
+		Amount = amount;
+	}
+
+	public Date getEventDate() {
+		return EventDate;
+	}
+
+	public void setEventDate(Date eventDate) {
+		EventDate = eventDate;
+	}
 
 }
