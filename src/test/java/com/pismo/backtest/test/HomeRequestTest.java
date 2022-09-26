@@ -19,6 +19,7 @@ public class HomeRequestTest {
 
 	@Test
 	public void greetingShouldReturnDefaultMessage() throws Exception {
-		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",	String.class)).contains("I'm alive");
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/", String.class))
+				.contains("I'm alive");
 	}
 }

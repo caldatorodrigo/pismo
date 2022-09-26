@@ -11,33 +11,32 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-@Entity(name="Transactions")
+@Entity(name = "Transactions")
 public class TransactionsModel {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Transaction_ID;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Transaction_ID;
 	private Long Account_ID;
-    private Long OperationType_ID;
-    private BigDecimal Amount;
-    
-    @Column(name = "`EventDate`")
+	private Long OperationType_ID;
+	private BigDecimal Amount;
+
+	@Column(name = "`EventDate`")
 	@CreationTimestamp
 	private Date EventDate;
 
-    /** Hibernate */
-    public TransactionsModel() {
-    }
+	/** Hibernate */
+	public TransactionsModel() {
+	}
 
-    /** DTO only */
-    public TransactionsModel(Long account_ID, Long operationType_ID, BigDecimal amount) {
-        Account_ID = account_ID;
-        OperationType_ID = operationType_ID;
-        Amount = amount;
-    }
+	/** DTO only */
+	public TransactionsModel(Long account_ID, Long operationType_ID, BigDecimal amount) {
+		Account_ID = account_ID;
+		OperationType_ID = operationType_ID;
+		Amount = amount;
+	}
 
-
-    public Long getTransaction_ID() {
+	public Long getTransaction_ID() {
 		return Transaction_ID;
 	}
 

@@ -15,17 +15,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "Operations Types", description = "description of Operations Types")
 @RestController
 public class OperationsTypesControler {
-    
-    private OperationsTypesService operationsTypesService;
 
-    @Autowired
-    public OperationsTypesControler(OperationsTypesService operationsTypesService) {
-        this.operationsTypesService = operationsTypesService;
-    }
+	private OperationsTypesService operationsTypesService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/operationstipes/save")
-    ResponseEntity<Object> save(@RequestBody OperationsTypesDTO operationsTypesDto) {
-    	return operationsTypesService.save(operationsTypesDto);
-    }
+	@Autowired
+	public OperationsTypesControler(OperationsTypesService operationsTypesService) {
+		this.operationsTypesService = operationsTypesService;
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/api/operationstipes/save")
+	ResponseEntity<Object> save(@RequestBody OperationsTypesDTO operationsTypesDto) {
+		return operationsTypesService.save(operationsTypesDto);
+	}
 
 }

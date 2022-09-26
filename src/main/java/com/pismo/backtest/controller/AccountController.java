@@ -18,19 +18,19 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class AccountController {
 	private AccountsService accountsService;
 
-    @Autowired
-    public AccountController(AccountsService accountsService) {
-        this.accountsService = accountsService;
-    }
+	@Autowired
+	public AccountController(AccountsService accountsService) {
+		this.accountsService = accountsService;
+	}
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/account/save")
-    ResponseEntity<Object> save(@RequestBody AccountsDTO accountDto) {
-        return accountsService.save(accountDto);
-    }
+	@RequestMapping(method = RequestMethod.POST, value = "/api/account/save")
+	ResponseEntity<Object> save(@RequestBody AccountsDTO accountDto) {
+		return accountsService.save(accountDto);
+	}
 
-    @RequestMapping(method = RequestMethod.GET, value = "/api/account/{accountId}")
-    ResponseEntity<Object> userById(@PathVariable Long accountId) {
-        return accountsService.loadById(accountId);
-    }
-    
+	@RequestMapping(method = RequestMethod.GET, value = "/api/account/{accountId}")
+	ResponseEntity<Object> userById(@PathVariable Long accountId) {
+		return accountsService.loadById(accountId);
+	}
+
 }

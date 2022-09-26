@@ -10,8 +10,7 @@ import com.pismo.backtest.model.AccountsModel;
 
 @Repository
 public interface AccountsRepository extends JpaRepository<AccountsModel, Long> {
-	
+
 	@Query("select u from Accounts u where u.Document_Number = ?1")
 	List<AccountsModel> findByDocument_Number(String document_Number);
 }
-

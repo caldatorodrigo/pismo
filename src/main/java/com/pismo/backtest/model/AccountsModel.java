@@ -6,26 +6,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
-@Entity(name="Accounts")
+@Entity(name = "Accounts")
 public class AccountsModel {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Account_ID;
 
-    @NotEmpty(message = "Document_Number is mandatory!")
-    private String Document_Number;
-        
-    /** hibernate */
-    public AccountsModel() {
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Account_ID;
 
-    /** DTO only*/
-    public AccountsModel(@NotEmpty String document_Number) {
-        Document_Number = document_Number;
-    }
+	@NotEmpty(message = "Document_Number is mandatory!")
+	private String Document_Number;
 
-    public Long getAccount_ID() {
+	/** hibernate */
+	public AccountsModel() {
+	}
+
+	/** DTO only */
+	public AccountsModel(@NotEmpty String document_Number) {
+		Document_Number = document_Number;
+	}
+
+	public Long getAccount_ID() {
 		return Account_ID;
 	}
 
@@ -42,6 +42,3 @@ public class AccountsModel {
 	}
 
 }
-
-
-

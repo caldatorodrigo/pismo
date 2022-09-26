@@ -17,45 +17,47 @@ import com.pismo.backtest.model.Error.ApiError;
 import com.pismo.backtest.repository.AccountsRepository;
 
 @Component
-public class AccountsService implements AccountsServiceInterface{
+public class AccountsService implements AccountsServiceInterface {
 	private AccountsRepository accountsRepository;
-	
+
 	@Autowired
 	public AccountsService(AccountsRepository accountsRepository) {
 		this.accountsRepository = accountsRepository;
 	}
-    
+
 	@Override
 	public ResponseEntity<Object> save(AccountsDTO accountDto) {
-    	ApiError error = validFields(accountDto);
-    	if(error != null) {
-    		return new ResponseEntity<Object>(error, new HttpHeaders(), error.getStatus());
-    	};
-   	
-    	AccountsModel accountModel = accountsRepository.save(accountDto.transformToObject());
-        return new ResponseEntity<>(accountModel, HttpStatus.CREATED);
+		ApiError error = validFields(accountDto);
+		if (error != null) {
+			return new ResponseEntity<Object>(error, new HttpHeaders(), error.getStatus());
+		}
+		;
+
+		AccountsModel accountModel = accountsRepository.save(accountDto.transformToObject());
+		return new ResponseEntity<>(accountModel, HttpStatus.CREATED);
 	}
-	
+
 	private ApiError validFields(AccountsDTO accountDto) {
 		List<String> errorList = new ArrayList<>();
-		List<AccountsModel> AccountsModelList= new ArrayList<>();
-		
-		/** Check if account exists by Documment_Number*/	
+		List<AccountsModel> AccountsModelList = new ArrayList<>();
+
+		/** Check if account exists by Documment_Number */
 		AccountsModelList = accountsRepository.findByDocument_Number(accountDto.getDocument_Number());
-        if(AccountsModelList.size() > 0){
-        	errorList.add("004 :Account found - possibly the account has already been created.");
-        }
-        
-        if(errorList.size() > 0) {
-        	return new ApiError(HttpStatus.FOUND, "Error encountered while processing the account", errorList);
-        }else {
-        	return null;
-        }
+		if (AccountsModelList.size() > 0) {
+			errorList.add("004 :Account found - possibly the account has already been created.");
+		}
+
+		if (errorList.size() > 0) {
+			return new ApiError(HttpStatus.FOUND, "Error encountered while processing the account", errorList);
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public ResponseEntity<Object> loadById(Long accountId) {
-        AccountsModel accountsModel = accountsRepository.findById(accountId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return new ResponseEntity<>(accountsModel, HttpStatus.FOUND);
+		AccountsModel accountsModel = accountsRepository.findById(accountId)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		return new ResponseEntity<>(accountsModel, HttpStatus.FOUND);
 	}
 }

@@ -3,10 +3,9 @@ package com.pismo.backtest.model.DTO;
 import com.pismo.backtest.model.OperationsTypesModel;
 
 public class OperationsTypesDTO {
-    private String Description;
+	private String Description;
 
-
-    public String getDescription() {
+	public String getDescription() {
 		return Description;
 	}
 
@@ -14,10 +13,9 @@ public class OperationsTypesDTO {
 		Description = description;
 	}
 
-	
-    /** DTO only */
-    public OperationsTypesModel transformToObject(){
-        return new OperationsTypesModel(Description);
-    }
-    
+	/** DTO only */
+	public OperationsTypesModel transformToObject() {
+		return new OperationsTypesModel(Description);
+	}
+
 }

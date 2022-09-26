@@ -8,11 +8,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Home")
 @RestController
-public class HomeController {
+public class HealthController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String home() {
-        return "I'm alive";
-    }
+	@RequestMapping(method = RequestMethod.GET, value = "/")
+	public String home() {
+		return "I'm alive";
+	}
 
 }
