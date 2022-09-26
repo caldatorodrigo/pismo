@@ -23,7 +23,7 @@ public class AccountController {
 		this.accountsService = accountsService;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/api/account/save")
+	@RequestMapping(method = RequestMethod.POST, value = "/api/accounts")
 	ResponseEntity<Object> save(@RequestBody AccountsDTO accountDto) {
 		return accountsService.save(accountDto);
 	}

@@ -1,8 +1,11 @@
-## STEPS FOR THIS SPRING BOOT APP
+## STEPS FOR THIS APP
 - Define dependencies in build.gradle
 - Create a Spring Boot Main @SpringBootApplication
 - Create components @Entity / @RestController / @Repository
 - Create application.properties
+- Create Swagger for documentation Rest API
+- create docker image.
+- define a PostgreSql DataBase.
 - Build 
 
 ## BUILD the application 
@@ -12,20 +15,6 @@ gradle clean build
 docker-compose up 
 docker-compose down
 
-## SWAGGER
+## SWAGGER REST API
 http://localhost:8080/swagger-ui.html
-
-## CURLS 
-
-### POST /user/save 
-curl -s -X POST \
-  http://localhost:8080/user/save \
-  -H 'Content-Type: application/json' \
-  -d '{"name":"Your Name"}'
-
-
-### GET /user/{id}
-curl -s -X GET \
-  http://localhost:8080/user/1 
- 
  

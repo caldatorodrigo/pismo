@@ -20,7 +20,7 @@ public class TransactionControle {
 		this.transactionService = transactionService;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/api/transaction/save")
+	@RequestMapping(method = RequestMethod.POST, value = "/api/transactions")
 	ResponseEntity<Object> save(@RequestBody TransactionsDTO transactionDto) {
 		return transactionService.save(transactionDto);
 	}

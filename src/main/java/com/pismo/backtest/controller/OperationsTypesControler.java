@@ -23,7 +23,7 @@ public class OperationsTypesControler {
 		this.operationsTypesService = operationsTypesService;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/api/operationstipes/save")
+	@RequestMapping(method = RequestMethod.POST, value = "/api/operationstypes")
 	ResponseEntity<Object> save(@RequestBody OperationsTypesDTO operationsTypesDto) {
 		return operationsTypesService.save(operationsTypesDto);
 	}
