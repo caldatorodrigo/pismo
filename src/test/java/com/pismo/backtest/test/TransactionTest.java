@@ -46,15 +46,15 @@ public class TransactionTest {
 
 	@Test
 	public void creatingTransactionsTest() {
-		HttpEntity<TransactionsModel> request = new HttpEntity<>(new TransactionsModel((long)1, (long)1, BigDecimal.valueOf(-50.00)));
+		HttpEntity<TransactionsModel> request = new HttpEntity<>(
+				new TransactionsModel((long) 1, (long) 1, BigDecimal.valueOf(-50.00)));
 		ResponseEntity<TransactionsModel> response = restTemplate.exchange(
 				"http://localhost:" + port + "/api/transactions", HttpMethod.POST, request, TransactionsModel.class);
 
 		assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 
 		TransactionsModel transactionsModel = response.getBody();
-		Json.prettyPrint(transactionsModel);
-		
+
 		assertThat(transactionsModel, notNullValue());
 		assertThat(transactionsModel.getAccount_ID(), is(1L));
 		assertThat(transactionsModel.getOperationType_ID(), is(1L));
