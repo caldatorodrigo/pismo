@@ -4,8 +4,8 @@
 - Create components @Entity / @RestController / @Repository
 - Create application.properties
 - Create Swagger for documentation Rest API
-- create docker image.
-- define a PostgreSql DataBase.
+- Create docker image.
+- Define a PostgreSql DataBase (Local and Docker).
 - Build 
 
 ## BUILD the application 

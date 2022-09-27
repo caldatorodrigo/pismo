@@ -75,14 +75,14 @@ public class TransactionService implements TransactionServiceInterface {
 
 		/** Check if account exists */
 		Optional<AccountsModel> accountsModel = accountsRepository.findById(transactionDto.getAccount_ID());
-		if (accountsModel != null) {
+		if (accountsModel == null) {
 			errorList.add("001 :Account not found - Possibly the account was not created.");
 		}
 
 		/** Checks if the operation type exists */
 		Optional<OperationsTypesModel> operationsTypesModel = operationsTypesRepository
 				.findById(transactionDto.getOperationType_ID());
-		if (operationsTypesModel != null) {
+		if (operationsTypesModel == null) {
 			errorList.add("002: Operation Type not found - Possibly type of operation not supported by the system.");
 		}
 

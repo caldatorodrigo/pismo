@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -17,8 +18,11 @@ public class TransactionsModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Transaction_ID;
+	@NotNull(message = "AccountID is mandatory!")
 	private Long Account_ID;
+	@NotNull(message = "OperationTypeID is mandatory!")
 	private Long OperationType_ID;
+	@NotNull(message = "Amount is mandatory!")
 	private BigDecimal Amount;
 
 	@Column(name = "`EventDate`")
