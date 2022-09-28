@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pismo.backtest.TransactionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-28T20:37:42" hostname="dasa" time="0.046">
+  <properties/>
+  <testcase name="createAccounts()" classname="com.pismo.backtest.TransactionTest" time="0.04"/>
+  <testcase name="mandatoryFilds()" classname="com.pismo.backtest.TransactionTest" time="0.005"/>
+  <system-out><![CDATA[Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pismo.backtest.TransactionTest], using SpringBootContextLoader
+Could not detect default resource locations for test class [com.pismo.backtest.TransactionTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+Could not detect default configuration classes for test class [com.pismo.backtest.TransactionTest]: TransactionTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+Found @SpringBootConfiguration com.pismo.backtest.BacktestApplication for test class com.pismo.backtest.TransactionTest
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@52813ba4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@62291850, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2518245b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@45c8db36, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1e4f8430, org.springframework.test.context.support.DirtiesContextTestExecutionListener@340ef431, org.springframework.test.context.transaction.TransactionalTestExecutionListener@50d02417, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53425450, org.springframework.test.context.event.EventPublishingTestExecutionListener@314e240c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7222e168, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@230383a7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6222a343, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@228c854f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@47c019d7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7861a433]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/transactions
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"50"]
+             Body = {"account_ID":1,"operationType_ID":1,"amount":-50}
+    Session Attrs = {}
+
+Handler:
+             Type = com.pismo.backtest.controller.TransactionControle
+           Method = com.pismo.backtest.controller.TransactionControle#save(TransactionsDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"account_ID":1,"operationType_ID":1,"amount":-50,"transaction_ID":1,"eventDate":"2022-09-28T20:37:42.189+00:00"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pismo.backtest.HealthTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-28T20:37:41" hostname="dasa" time="0.126">
+  <properties/>
+  <testcase name="greetingShouldReturnDefaultMessage()" classname="com.pismo.backtest.HealthTest" time="0.126"/>
+  <system-out><![CDATA[Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pismo.backtest.HealthTest], using SpringBootContextLoader
+Could not detect default resource locations for test class [com.pismo.backtest.HealthTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+Could not detect default configuration classes for test class [com.pismo.backtest.HealthTest]: HealthTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+Found @SpringBootConfiguration com.pismo.backtest.BacktestApplication for test class com.pismo.backtest.HealthTest
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1a370c7c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f08f9f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6e21b6f8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@69a14512, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4bd7e0b6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2cbc0224, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4fc9e73d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2ca3a203, org.springframework.test.context.event.EventPublishingTestExecutionListener@58052571, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1464a177, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@14144cc9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@259647f2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54c9c09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6517bc6b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@53d3d604]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.4)
+
+Starting HealthTest using Java 17.0.3 on dasa with PID 147635 (started by caldato in /home/caldato/Caldato/Git/pessoal/pismo-initializr-spring)
+No active profile set, falling back to 1 default profile: "default"
+Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+Tomcat initialized with port(s): 0 (http)
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.65]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 312 ms
+HHH000204: Processing PersistenceUnitInfo [name: default]
+HikariPool-2 - Starting...
+HikariPool-2 - Start completed.
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Tomcat started on port(s): 46409 (http) with context path ''
+Started HealthTest in 1.268 seconds (JVM running for 8.096)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 1 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
